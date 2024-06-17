@@ -1,14 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Upload File</title>
 </head>
 <body>
-    Uploading A File
-    <form>
-
-    </form>
+    <div class="container">
+        <form method="POST" action="{% url 'file_upload:upload_file' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" name="myFile" type="file" id="formFile">
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-success my-2" data-dismiss="modal"> <i class='uil-file-upload-alt'></i>  Upload Template </button>
+            </div>
+        </form>
+    </div>
+    
 </body>
 </html>
