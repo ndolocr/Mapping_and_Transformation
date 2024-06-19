@@ -33,6 +33,20 @@ def upload_file(request):
                 employeremail = row[18]
                 employerphone = row[19]
                 employerfax = row[20]
+
+
         return render(request, 'file_upload/upload_file.html')
     else:
         return render(request, 'file_upload/upload_file.html')
+
+
+class Person:
+    email = ""
+    lastname = ""
+    firstname = ""    
+    birthdate = ""    
+    mobilephonenumber = ""
+    homephonenumber = ""
+
+    def __init__(self) -> None:
+        (pass)
