@@ -1,3 +1,4 @@
+import openpyxl
 from django.shortcuts import render
 
 # Create your views here.
@@ -9,7 +10,7 @@ def upload_file(request):
         excel_file = request.FILES["myFile"]
 
         if excel_file.name.endswith('.xlsx') or excel_file.name.endswith('.xls'):
-            with open('cases/static/upload/' + excel_file.name, 'wb+') as destination:
+            with open('file/static/upload/' + excel_file.name, 'wb+') as destination:
                 for chunk in excel_file.chunks():
                     destination.write(chunk)
 
