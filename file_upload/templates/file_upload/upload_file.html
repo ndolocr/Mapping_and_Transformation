@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form method="POST" action="{% url 'file_upload:upload_file' %}">
+        <form method="POST" action="{% url 'file_upload:upload_file' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="formFile" class="form-label">Default file input example</label>
