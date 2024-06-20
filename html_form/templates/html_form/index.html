@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <title>Source Form</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="{% url 'html_form:create' %}">
+            {% csrf_token %}
+            <div class="row" style="padding-top: 2%;">
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="firstname" placeholder="Enter first name">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="mailingcity" placeholder="Enter mailing city">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="email" placeholder="Enter email">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employername" placeholder="Enter employer name">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employerstate" placeholder="Enter employer state">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employerphone" placeholder="Enter employer phone">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="lastname" placeholder="Enter last name">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="mailingstate" placeholder="Enter mailing state">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="mobilephonenumber" placeholder="Enter mobile phone number">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employerindustry" placeholder="Enter employer industry">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employerpostcode" placeholder="Enter employer postcode">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employerfax" placeholder="Enter employer fax">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <input type="date" class="form-control" name="birthdate" placeholder="Enter birth date">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="mailingcountry" placeholder="Enter mailing country">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="homephonenumber" placeholder="Enter home phone number">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employerstreet" placeholder="Enter employer street">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employercountry" placeholder="Enter employer country">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="mailingstreet" placeholder="Enter mailing street">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="mailingpostcode" placeholder="Enter mailing post code">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employeetitle" placeholder="Enter employee title">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employercity" placeholder="Enter employer city">
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="employeremail" placeholder="Enter employer email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 2%;">
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-success mb-3" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
