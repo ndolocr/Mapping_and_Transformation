@@ -36,8 +36,16 @@ def upload_file(request):
                 employerphone = row[19]
                 employerfax = row[20]
 
+                row_list = [firstname, lastname, birthdate, mailingstreet, mailingcity, mailingstate, 
+                            mailingcountry, mailingpostcode, email, mobilephonenumber, homephonenumber, 
+                            employeetitle, employername, employerindustry, employerstreet, employercity, 
+                            employerstate, employerpostcode, employercountry, employeremail, employerphone, employerfax, ]
                 
-            turtle_str = transformation_matrix()
+                print(f"Row list --> {row_list}")
+                turtle_list.append(row_list)
+
+            print(f"Turtle List --> {turtle_list}")
+            turtle_str = transformation_matrix(turtle_list)
 
             context = { "turtle": turtle_str}
 
@@ -45,7 +53,7 @@ def upload_file(request):
     else:
         return render(request, 'file_upload/upload_file.html')
 
-def transformation_matrix():
+def transformation_matrix(turtle_list):
     turtle_str = f""
     mdd = "PREFIX mdd: <https://dictionary.mydata.org/#>"
     xsd = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>"
