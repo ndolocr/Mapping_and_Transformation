@@ -1,5 +1,5 @@
 from django.urls import path
-from api_call import views
+from html_form import views
 
 app_name = "html_form"
 urlpatterns = [
