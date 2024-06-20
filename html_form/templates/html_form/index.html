@@ -1,15 +1,6 @@
+{% extends 'base_file.html' %}
+{%  block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
-    <title>Source Form</title>
-</head>
-<body>
     <div class="container">
         <form method="POST" action="{% url 'html_form:create' %}">
             {% csrf_token %}
@@ -118,6 +109,4 @@
             </div>
         </form>
     </div>
-    
-</body>
-</html>
+{%  endblock %}
