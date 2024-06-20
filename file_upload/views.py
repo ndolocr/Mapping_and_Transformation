@@ -7,9 +7,11 @@ def upload_file(request):
     if request.method == 'POST':
         myFile = request.FILES["myFile"]
         if myFile.name.endswith('.csv'):
+            turtle_list = []
             csv_file = TextIOWrapper(myFile.file, encoding='utf-8')            
             csv_reader = csv.reader(csv_file)
             next(csv_reader)
+
             for row in csv_reader:
                 firstname = row[0]
                 lastname = row[1]
@@ -34,19 +36,26 @@ def upload_file(request):
                 employerphone = row[19]
                 employerfax = row[20]
 
+                
+            turtle_str = transformation_matrix()
 
-        return render(request, 'file_upload/upload_file.html')
+            context = { "turtle": turtle_str}
+
+        return render(request, 'file_upload/upload_file.html', context)
     else:
         return render(request, 'file_upload/upload_file.html')
 
+def transformation_matrix():
+    turtle_str = f""
+    mdd = "PREFIX mdd: <https://dictionary.mydata.org/#>"
+    xsd = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>"
+    rdf = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"
+    cco = "PREFIX cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>"
+    pop = "PREFIX pop: <https://opensource.ieee.org/person-ontology-group/person-ontology-project/-/blob/master/dev/Person-Ontology-dev.ttl->"
+    
+    turtle_str += f"{mdd} \n{xsd} \n{rdf} \n{cco} \n{pop} \n"
 
-class Person:
-    email = ""
-    lastname = ""
-    firstname = ""    
-    birthdate = ""    
-    mobilephonenumber = ""
-    homephonenumber = ""
+    print(turtle_str)
 
-    def __init__(self) -> None:
-        (pass)
+    return turtle_str
+
