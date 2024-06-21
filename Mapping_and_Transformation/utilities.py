@@ -44,27 +44,37 @@ def transformation_matrix(turtle_list):
             turtle_str += ' ; \n'
             turtle_str += f'mdd:my-homephonenumber "{row[10]}" '
         turtle_str += ' . \n'
-        
+
         if row[11] != "":
-            turtle_str += f'\n cco:OccupationRole mdd:my-employeetitle "{row[11]}" ; \n'
-        if row[12] != "":
-            turtle_str += f'mdd:my-employername "{row[12]}" ; \n'
-        if row[13] != "":
-            turtle_str += f'mdd:my-employerindustry "{row[13]}" ; \n'
-        if row[14] != "":
-            turtle_str += f'mdd:my-employerstreet "{row[14]}" ; \n'
-        if row[15] != "":
-            turtle_str += f'mdd:my-employercity "{row[15]}" ;\n'
-        if row[16] != "":
-            turtle_str += f'mdd:my-employerstate "{row[16]}" ; \n'
-        if row[17] != "":
-            turtle_str += f'mdd:employerpostcode "{row[17]}" ; \n'
-        if row[18] != "":
-            turtle_str += f'mdd:employercountry "{row[18]}" ; \n'
-        if row[19] != "":
-            turtle_str += f'mdd:employerphone "{row[19]}" ; \n'
-        if row[20] != "":
-            turtle_str += f'mdd:employerfax "{row[20]}" .\n'
+            turtle_str += f'\n cco:OccupationRole mdd:my-employeetitle "{row[11]}" '
+            if row[12] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:my-employername "{row[12]}" '
+            if row[13] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:my-employerindustry "{row[13]}" '
+            if row[14] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:my-employerstreet "{row[14]}" '
+            if row[15] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:my-employercity "{row[15]}" '
+            if row[16] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:my-employerstate "{row[16]}" '
+            if row[17] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:employerpostcode "{row[17]}" '
+            if row[18] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:employercountry "{row[18]}" '
+            if row[19] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:employerphone "{row[19]}" '
+            if row[20] != "":
+                turtle_str += ' ; \n'
+                turtle_str += f'mdd:employerfax "{row[20]}" '
+            turtle_str += ' . '
       
     turtle_str += "\n\n # END!"
     print(turtle_str)
